@@ -21,9 +21,9 @@ public class DatabaseOperation {
 	public static Connection getConnection(){  
 		try{  
 			Class.forName("com.mysql.cj.jdbc.Driver");     
-			String db_url ="jdbc:mysql://localhost:3306/crud_jsf",
+			String db_url ="jdbc:mysql://localhost:3306/exemplo1",
 					db_userNome = "root",
-					db_password = "root";
+					db_password = "12345678";
 			connObj = DriverManager.getConnection(db_url,db_userNome,db_password);  
 		} catch(Exception sqlException) {  
 			sqlException.printStackTrace();
@@ -35,7 +35,7 @@ public class DatabaseOperation {
 		try {
 			
 			stmtObj = getConnection().createStatement();    
-			resultSetObj = stmtObj.executeQuery(" select count(1) as rowcount FROM information_schema.tables WHERE table_schema = 'crud_jsf'  AND table_name = 'usuario' LIMIT 1; " );    
+			resultSetObj = stmtObj.executeQuery(" select count(1) as rowcount FROM information_schema.tables WHERE table_schema = 'exemplo1'  AND table_name = 'usuario' LIMIT 1; " );    
 			resultSetObj.next();		
 			
 			
